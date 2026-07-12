@@ -4,20 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sunrise Hotel Booking</title>
-  <link rel="stylesheet" href="style.css"/>
+  
+  <!-- PREMIUM LUXURY FONTS LINK -->
+  <link href="https://googleapis.com" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css?v=2.1"/>
 </head>
 <body>
 
 <header class="hero">
-  <div class="overlay">
-    <h1>Book Your Perfect Stay</h1>
-    <p>Luxury rooms at affordable prices</p>
+  <!-- TRANSLUCENT LUXURY NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">SUNRISE HOTEL</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Rooms</a></li>
+      <li><a href="#">Amenities</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="nav-btn">Book Now</button>
+  </nav>
 
-    <div class="search-box">
-      <input type="date" />
-      <input type="date" />
-      <input type="number" placeholder="Guests" />
-      <button id="checkBtn">Check Availability</button>
+  <!-- BACKGROUND VIDEO -->
+  <video autoplay loop muted playsinline class="video-bg">
+    <source src="https://res.cloudinary.com/kfcu2z4r/video/upload/v1783864613/11400591-hd_1920_1080_30fps_d8ftd6.mp4" type="video/mp4">
+  </video>
+
+  <!-- STYLED PREMIUM CONTENT OVERLAY -->
+  <div class="overlay">
+    <div class="hero-content">
+      <span class="hero-subtitle">WELCOME TO LUXURY</span>
+      <h1 class="hero-title">Book Your Perfect Stay</h1>
+      <p class="hero-tagline">Experience premium rooms at affordable prices, tailored for unforgettable memories.</p>
+
+      <!-- PREMIUM MINIMALIST SEARCH BOX -->
+      <div class="search-box">
+        <div class="input-group">
+          <label>Check In</label>
+          <input type="date" />
+        </div>
+        <div class="input-group">
+          <label>Check Out</label>
+          <input type="date" />
+        </div>
+        <div class="input-group">
+          <label>Guests</label>
+          <input type="number" placeholder="2 Guests" min="1" />
+        </div>
+        <button id="checkBtn">Check Availability</button>
+      </div>
     </div>
   </div>
 </header>
@@ -30,41 +65,41 @@
   <h2>Our Rooms</h2>
 
   <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Standard Room" />
+      <h3>Standard Room</h3>
+      <p>WiFi • AC • Breakfast</p>
+      <h4>R800 / night</h4>
+      <button class="book-btn" data-room="Standard Room">Book Now</button>
+    </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" />
-    <h3>Standard Room</h3>
-    <p>WiFi • AC • Breakfast</p>
-    <h4>R800 / night</h4>
-    <button class="book-btn" data-room="Standard Room">Book Now</button>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" />
+      <h3>Deluxe Room</h3>
+      <p>Sea View • WiFi • AC</p>
+      <h4>R1200 / night</h4>
+      <button class="book-btn" data-room="Deluxe Room">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" alt="Luxury Suite" />
+      <h3>Luxury Suite</h3>
+      <p>Private Lounge • VIP Service</p>
+      <h4>R2000 / night</h4>
+      <button class="book-btn" data-room="Luxury Suite">Book Now</button>
+    </div>
   </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" />
-    <h3>Deluxe Room</h3>
-    <p>Sea View • WiFi • AC</p>
-    <h4>R1200 / night</h4>
-    <button class="book-btn" data-room="Deluxe Room">Book Now</button>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" />
-    <h3>Luxury Suite</h3>
-    <p>Private Lounge • VIP Service</p>
-    <h4>R2000 / night</h4>
-    <button class="book-btn" data-room="Luxury Suite">Book Now</button>
-  </div>
-
-</div>
 </section>
 
 <section class="cta">
   <h2>Need Help Booking?</h2>
   <button class="whatsapp">Book via WhatsApp</button>
 </section>
+
 <footer style="text-align:center; padding:20px; background:#111; color:white;">
   <p>© 2026 Sunrise Hotel | Website by Diana Camacho</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>

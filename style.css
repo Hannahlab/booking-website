@@ -1,138 +1,396 @@
+/* GLOBAL STYLES */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0c0c0c;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* HERO */
+/* FLOATING LUXURY NAVBAR */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  box-sizing: border-box;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #d4af37; /* Premium Gold Accent */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #d4af37;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 10px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* HERO CONTAINER & BACKGROUND VIDEO */
 .hero {
+  position: relative;
   height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb");
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-align: center;
 }
 
-.hero {
-    opacity: 0;
-    animation: heroFade 0.8s ease forwards;
+.video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
 }
 
-@keyframes heroFade {
-    from {
-        opacity: 0;
-        transform: scale(1.02);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
+/* OVERLAY CONTAINER */
 .overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* CENTERED PREMIUM CONTENT */
+.hero-content {
+  max-width: 850px;
+  text-align: center;
   width: 100%;
 }
 
+.hero-subtitle {
+  font-size: 12px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #d4af37;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.hero-tagline {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* MODERNISED PREMIUM SEARCH BAR */
 .search-box {
-  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px 35px;
+  border-radius: 0px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.input-group label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d4af37;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .search-box input {
-  padding: 10px;
-  margin: 5px;
+  width: 100%;
+  background: transparent;
   border: none;
-  border-radius: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-.search-box button {
-  padding: 10px 20px;
-  background: #0077ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.search-box input:focus {
+  border-bottom: 1px solid #d4af37;
+}
+
+.search-box input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
   cursor: pointer;
 }
 
+.search-box button {
+  padding: 15px 35px;
+  background: #d4af37;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
 .search-box button:hover {
-  background: #005fd1;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
 }
 
 /* TRUST BAR */
 .trust {
   text-align: center;
-  padding: 15px;
-  background: #f4f4f4;
+  padding: 20px;
+  background: #111;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
-/* ROOMS */
+/* ROOMS SECTION */
 .rooms {
-  padding: 40px;
+  padding: 60px 40px;
   text-align: center;
+  background-color: #0c0c0c;
+}
+
+.rooms h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: 0px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background: white;
-  transition: 0.3s;
+  background: #161616;
+  border: 1px solid #222;
+  transition: all 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  border-color: #d4af37;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
 }
 
 .card h3 {
-  margin: 10px 0 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 20px 0 10px;
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 10px;
+}
+
+.card h4 {
+  font-size: 18px;
+  color: #d4af37;
+  margin: 0 0 20px;
+  font-weight: 400;
 }
 
 .card button {
-  margin: 10px;
-  padding: 10px;
-  width: 90%;
-  background: #28a745;
+  margin: 0 0 25px;
+  padding: 12px;
+  width: 85%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
   color: white;
-  border: none;
-  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .card button:hover {
-  background: #218838;
+  background: #d4af37;
+  color: #000;
+  border-color: #d4af37;
 }
 
 /* CTA */
 .cta {
   text-align: center;
-  padding: 40px;
-  background: #111;
-  color: white;
+  padding: 60px 20px;
+  background: #080808;
 }
 
+/* WHATSAPP CTA BUTTON */
 .whatsapp {
-  padding: 12px 20px;
+  padding: 14px 30px;
   background: #25D366;
-  border: none;
+  border: 1px solid #25D366;
   color: white;
-  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth movement transition */
+}
+
+/* NEW PREMIUM HOVER EFFECT */
+.whatsapp:hover {
+  background: transparent;
+  color: #25D366;
+  border-color: #25D366;
+  transform: translateY(-3px); /* Elegant slight lift */
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); /* Glow intensifies */
+}
+
+/* Subtle click response */
+.whatsapp:active {
+  transform: translateY(-1px);
+}
+
+
+/* RESPONSIVE DESIGN FOR MOBILE DEVICES */
+@media (max-width: 768px) {
+  /* Shrinks navigation area and reduces space on mobile */
+  .navbar { 
+    padding: 15px 20px; 
+  }
+  
+  /* Reduces the logo size so it doesn't crowd the hero section */
+  .nav-logo {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  /* Hides secondary links and side buttons on mobile layouts */
+  .nav-links, 
+  .nav-btn { 
+    display: none; 
+  }
+  
+  /* Scales down large heading text for smaller mobile viewports */
+  .hero-title { 
+    font-size: 38px; 
+  }
+  
+  /* Formats search system vertically for mobile screens */
+  .search-box { 
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 25px; 
+  }
+  
+  /* Stretches inputs and selection fields to fill screen width */
+  .input-group { 
+    width: 100%; 
+  }
+  
+  /* Forces the search action button to expand full-width */
+  .search-box button { 
+    width: 100%; 
+  }
 }
